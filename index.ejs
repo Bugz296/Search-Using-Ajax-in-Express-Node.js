@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="/assets/_css/style.css">
+		<title>Index</title>
+	</head>
+	<body>
+		<div id="main-container">
+			<!-- <div class="container">
+				<div class="sub-cont search-box">
+					<form action="/main/search" method="post">
+						<input type="hidden" name="action" value="search">
+						<label for="athlete_name"><h3>Search Users</h3></label>
+						<input type="text" name="name" id="athlete_name"></br>
+						<input type="checkbox" id="female" name="female">
+						<label for="female">Female</label></br>
+						<input type="checkbox" id="male" name="male">
+						<label for="male">Male</label></br>
+
+						<label><h3>Sports</h3></label>
+<?php				foreach($sports as $sport){
+						$sports_name = strtolower(str_replace(" ","_",$sport['name']));?>
+						<input type="checkbox" id="<?= $sports_name ?>" name="<?= $sports_name ?>" value="<?= $sport['id'] ?>">
+						<label for="<?= $sports_name ?>"><?= strtoupper($sport['name']) ?></label></br>
+<?php				} ?>
+						<input type="submit" value="Search">
+					</form>
+				</div>
+				<div class="sub-cont result-box">
+<?php			foreach($players as $player){ ?>
+					<figure>
+						<img src="<?= $player['img_src'] ?>">
+						<figcaption><?= $player['name'] ?></figcaption>
+					</figure>
+<?php			} ?>
+				</div>
+			</div> -->
+		</div>
+	</body>
+</html>

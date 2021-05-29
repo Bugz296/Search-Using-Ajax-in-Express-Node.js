@@ -1,0 +1,11 @@
+<%  
+    if(result.length != 0){
+        for(let i=0; i<result.length; i++){ %>
+            <figure>
+                <img src="<%= result[i].img_src %>">
+                <figcaption><%= result[i].name %></figcaption>
+            </figure>
+<%      }
+    }else{ %>
+        <p>No result</p>
+<%  } %>

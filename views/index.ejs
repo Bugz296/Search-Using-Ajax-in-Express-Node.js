@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+		<title>Sports and Players</title>
+        <script>
+            $(document).ready(function(){
+                $('form').submit(function(e){
+                    $.post('/search', $(this).serialize(), function(res){
+                        $(".result-box").html(res);
+                    });
+                    e.preventDefault();
+                });
+            });
+        </script>
+	</head>
+	<body>
+		<div id="main-container">
+			<div class="container">
+				<div class="sub-cont search-box">
+					<form action="/search" method="post">
+						<input type="hidden" name="action" value="search">
+						<label for="athlete_name"><h3>Search Users</h3></label>
+						<input type="text" name="name" id="athlete_name"></br>
+						<input type="checkbox" id="female" name="female">
+						<label for="female">Female</label></br>
+						<input type="checkbox" id="male" name="male">
+						<label for="male">Male</label></br>
+
+						<label><h3>Sports</h3></label>
+<%				    for(let i=0; i<sports.length; i++){ %>
+                        <input type="checkbox" id="<%= sports[i].name %>" name="sports" value="<%= sports[i].id %>">
+						<label for="<%= sports[i].name %>"><%= sports[i].name %></label></br>
+<%				    } %>
+						<input type="submit" value="Search">
+					</form>
+				</div>
+                <div class="sub-cont result-box"></div>
+			</div>
+		</div>
+	</body>
+</html>
